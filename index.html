@@ -19,6 +19,28 @@
             height: 100vh;
         }
 
+        .matrix-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        #matrix {
+            position: relative;
+            font-size: 16px;
+            white-space: nowrap;
+            animation: animate 15s linear infinite;
+        }
+
+        @keyframes animate {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100vh); }
+        }
+
         .quote {
             max-width: 80%;
             line-height: 1.5;
@@ -33,6 +55,9 @@
     </style>
 </head>
 <body>
+    <div class="matrix-container">
+        <div id="matrix"></div>
+    </div>
     <div class="quote">
         <h1>Amateurs hack systems,</h1>
         <h1>Professionals hack people.</h1>
@@ -40,5 +65,24 @@
     <div class="footer">
         <p>The winter is coming ...</p>
     </div>
+    <script>
+        // Generate random matrix-like characters
+        function generateMatrixText() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let matrixText = '';
+            for (let i = 0; i < 150; i++) {
+                matrixText += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return matrixText;
+        }
+
+        // Populate matrix effect
+        document.addEventListener('DOMContentLoaded', function () {
+            const matrixElement = document.getElementById('matrix');
+            const matrixText = generateMatrixText();
+
+            matrixElement.textContent = matrixText;
+        });
+    </script>
 </body>
 </html>

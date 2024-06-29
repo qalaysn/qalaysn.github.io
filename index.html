@@ -17,6 +17,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden; /* Hide overflow to prevent scrollbars */
         }
 
         .matrix-container {
@@ -30,20 +31,25 @@
         }
 
         #matrix {
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 50%; /* Start from the center of the screen */
+            transform: translateX(-50%); /* Center horizontally */
             font-size: 16px;
+            line-height: 1.5em; /* Adjust line height for spacing */
             white-space: nowrap;
-            animation: animate 15s linear infinite;
+            animation: animate 20s linear infinite; /* Adjust speed as needed */
         }
 
         @keyframes animate {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100vh); }
+            0% { transform: translate(-50%, 0); }
+            100% { transform: translate(-50%, -100vh); }
         }
 
         .quote {
             max-width: 80%;
             line-height: 1.5;
+            z-index: 1; /* Bring quote text above matrix */
         }
 
         .footer {
@@ -51,12 +57,15 @@
             bottom: 20px;
             width: 100%;
             color: green; /* Change color for footer text if needed */
+            z-index: 1; /* Bring footer text above matrix */
         }
     </style>
 </head>
 <body>
     <div class="matrix-container">
-        <div id="matrix"></div>
+        <div id="matrix">
+            <!-- JavaScript will populate numbers here -->
+        </div>
     </div>
     <div class="quote">
         <h1>Amateurs hack systems,</h1>
@@ -66,22 +75,28 @@
         <p>The winter is coming ...</p>
     </div>
     <script>
-        // Generate random matrix-like characters
+        // Function to generate numbers 0-9
         function generateMatrixText() {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             let matrixText = '';
             for (let i = 0; i < 150; i++) {
-                matrixText += chars.charAt(Math.floor(Math.random() * chars.length));
+                matrixText += Math.floor(Math.random() * 10); // Generate random number 0-9
             }
             return matrixText;
         }
 
-        // Populate matrix effect
+        // Populate matrix effect with numbers
         document.addEventListener('DOMContentLoaded', function () {
             const matrixElement = document.getElementById('matrix');
-            const matrixText = generateMatrixText();
-
+            
+            // Generate initial matrix text
+            let matrixText = generateMatrixText();
             matrixElement.textContent = matrixText;
+
+            // Update matrix text every interval
+            setInterval(function() {
+                matrixText = generateMatrixText();
+                matrixElement.textContent = matrixText;
+            }, 50); // Adjust interval (ms) for speed
         });
     </script>
 </body>

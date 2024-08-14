@@ -3,103 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QALAYSN</title>
-    <style>
-        body {
-            background-color: black;
-            color: green;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .matrix-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none; /* Disable interaction with the matrix */
-        }
-
-        #matrix {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 16px;
-            line-height: 1.5em;
-            white-space: nowrap;
-            animation: animate 20s linear infinite;
-        }
-
-        @keyframes animate {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100vh); }
-        }
-
-        .quote {
-            max-width: 80%;
-            line-height: 1.5;
-            z-index: 1;
-            margin-bottom: 20px;
-        }
-
-        .quote h1 {
-            font-size: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            color: green;
-            z-index: 1;
-        }
-
-        .footer p {
-            margin: 0;
-            font-size: 1rem;
-        }
-
-        /* Responsive design adjustments */
-        @media (max-width: 600px) {
-            .quote h1 {
-                font-size: 1.5rem;
-            }
-
-            .footer p {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    <title>OSINT & Cybersecurity Insights</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <div class="logo">QALAYSN</div>
+        <nav>
+            <a href="#news">News</a>
+            <a href="#guides">Guides</a>
+            <a href="#resources">Resources</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
     <div class="matrix-container">
-        <div id="matrix">
-            <!-- JavaScript will populate numbers here -->
-        </div>
+        <div id="matrix"></div>
     </div>
-    <div class="quote">
-        <h1>Amateurs hack systems,</h1>
-        <h1>Professionals hack people.</h1>
+    <div class="main-content">
+        <section id="news">
+            <h1>Latest OSINT & Cybersecurity News</h1>
+            <p>Stay updated with the latest trends, developments, and tools in OSINT and cybersecurity.</p>
+            <!-- Example post -->
+            <article>
+                <h2>Exploring New OSINT Tools</h2>
+                <p>Discover the latest OSINT tools that can enhance your investigative skills.</p>
+                <a href="#">Read More</a>
+            </article>
+        </section>
+        <section id="guides">
+            <h2>Guides and Tutorials</h2>
+            <p>Explore our step-by-step guides and tutorials to enhance your skills in OSINT and cybersecurity.</p>
+            <!-- Example guide -->
+            <article>
+                <h2>How to Conduct a Thorough OSINT Investigation</h2>
+                <p>Follow this comprehensive guide to perform effective OSINT investigations.</p>
+                <a href="#">Read More</a>
+            </article>
+        </section>
+        <section id="resources">
+            <h2>Useful Resources</h2>
+            <p>Find valuable resources, tools, and references for OSINT and information security.</p>
+            <!-- Example resource -->
+            <article>
+                <h2>Top OSINT Tools You Should Know</h2>
+                <p>Here is a list of essential OSINT tools for researchers and investigators.</p>
+                <a href="#">Explore Tools</a>
+            </article>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or suggestions, feel free to <a href="mailto:you@example.com">email us</a>.</p>
+        </section>
     </div>
     <div class="footer">
-        <p>The winter is coming ...</p>
+        <p>&copy; 2024 QALAYSN. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </div>
     <script>
-        // Function to generate numbers 0-9
         function generateMatrixText() {
             let matrixText = '';
             for (let i = 0; i < 150; i++) {
@@ -108,15 +67,11 @@
             return matrixText;
         }
 
-        // Populate matrix effect with numbers
         document.addEventListener('DOMContentLoaded', function () {
             const matrixElement = document.getElementById('matrix');
-            
-            // Generate initial matrix text
             let matrixText = generateMatrixText();
             matrixElement.textContent = matrixText;
 
-            // Update matrix text every interval
             setInterval(function() {
                 matrixText = generateMatrixText();
                 matrixElement.textContent = matrixText;

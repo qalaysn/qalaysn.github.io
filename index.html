@@ -8,7 +8,7 @@
         body {
             background-color: black;
             color: green;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden; /* Hide overflow to prevent scrollbars */
+            overflow: hidden;
         }
 
         .matrix-container {
@@ -28,36 +28,60 @@
             height: 100%;
             z-index: -1;
             overflow: hidden;
+            pointer-events: none; /* Disable interaction with the matrix */
         }
 
         #matrix {
             position: absolute;
             top: 0;
-            left: 50%; /* Start from the center of the screen */
-            transform: translateX(-50%); /* Center horizontally */
+            left: 50%;
+            transform: translateX(-50%);
             font-size: 16px;
-            line-height: 1.5em; /* Adjust line height for spacing */
+            line-height: 1.5em;
             white-space: nowrap;
-            animation: animate 20s linear infinite; /* Adjust speed as needed */
+            animation: animate 20s linear infinite;
         }
 
         @keyframes animate {
-            0% { transform: translate(-50%, 0); }
-            100% { transform: translate(-50%, -100vh); }
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100vh); }
         }
 
         .quote {
             max-width: 80%;
             line-height: 1.5;
-            z-index: 1; /* Bring quote text above matrix */
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+
+        .quote h1 {
+            font-size: 2rem;
+            margin: 0;
+            padding: 0;
         }
 
         .footer {
             position: absolute;
             bottom: 20px;
             width: 100%;
-            color: green; /* Change color for footer text if needed */
-            z-index: 1; /* Bring footer text above matrix */
+            color: green;
+            z-index: 1;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Responsive design adjustments */
+        @media (max-width: 600px) {
+            .quote h1 {
+                font-size: 1.5rem;
+            }
+
+            .footer p {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>

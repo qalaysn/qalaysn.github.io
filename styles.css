@@ -1,0 +1,125 @@
+/* styles.css */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #1e1e1e;
+    width: 100%;
+    padding: 10px 20px;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav a {
+    color: #e0e0e0;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.main-content h1, .main-content h2 {
+    color: #c0c0c0;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+article h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+article p {
+    margin: 10px 0;
+}
+
+article a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+.matrix-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#matrix {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    line-height: 1.5em;
+    white-space: nowrap;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100vh); }
+}
+
+.footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer a {
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+}

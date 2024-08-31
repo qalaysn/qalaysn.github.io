@@ -1,8 +1,8 @@
 ---
-title:  "Welcome to our cybersecurity blog"
+title:  "Welcome to our cybersecurity and OSINT blog"
 date:   2024-08-07 05:00:00 +0300
 header:
-  teaser: "/assets/images/1/welcome.png"
+  teaser: "/assets/images/1/osint.png"
 categories: 
   - tutorial
 tags:
@@ -14,7 +14,7 @@ tags:
 
 Welcome to our cybersecurity and OSINT blog!          
 
-![welcome](/assets/images/1/welcome.png){:class="img-responsive"}      
+![welcome](/assets/images/1/osint.png){:class="img-responsive"}      
 
 We will describe techniques for the successful work of the OSINT, HUMINT, ADINT, DarkWeb intelligence, research and case studies about Maltego and programming. This blog will include our investigations into cybersecurity OSINT investigations and analysis.        
 

@@ -1,0 +1,34 @@
+---
+title:  "Welcome to our cybersecurity blog"
+date:   2024-08-07 05:00:00 +0300
+header:
+  teaser: "/assets/images/1/welcome.png"
+categories: 
+  - tutorial
+tags:
+  - osint
+  - intelligence
+  - apt
+  - hacking
+---
+
+Welcome to our cybersecurity and OSINT blog!          
+
+![welcome](/assets/images/1/welcome.png){:class="img-responsive"}      
+
+We will describe techniques for the successful work of the OSINT, HUMINT, ADINT, DarkWeb intelligence, research and case studies about Maltego and programming. This blog will include our investigations into cybersecurity OSINT investigations and analysis.        
+
+Also, our open source projects will be described here. We will provide the full source codes and we hope it will be a good contribution to the cybersecurity community:    
+
+```cpp
+#include <iostream>
+
+int main() {
+    std::cout << "Hello World!";
+    return 0;
+}
+```
+
+If you have questions, you can ask them on our [email](mailto:test@test.com).
+
+Our Github repo: [https://github.com/qalaysn](https://github.com/qalaysn)          
